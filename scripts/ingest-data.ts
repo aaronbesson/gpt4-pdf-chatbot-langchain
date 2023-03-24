@@ -31,7 +31,7 @@ export const run = async () => {
     const embeddings = new OpenAIEmbeddings({
       openAIApiKey: process.env.OPEN_API_KEY,
     });
-    const index = pinecone.Index('ttbudget2023'); //change to your own index name
+    const index = pinecone.Index(PINECONE_INDEX_NAME); //change to your own index name
 
     //embed the PDF documents
 
