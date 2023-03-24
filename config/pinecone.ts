@@ -3,5 +3,5 @@
  */
 
 const PINECONE_INDEX_NAME = 'ttbudget2023';
-const PINECONE_NAME_SPACE = 'ttbudget2023'; //namespace is optional for your vectors
+const PINECONE_NAME_SPACE = 'budget'; //namespace is optional for your vectors
 export { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE };
