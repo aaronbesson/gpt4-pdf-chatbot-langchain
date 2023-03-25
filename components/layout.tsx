@@ -11,14 +11,14 @@ export default function Layout({ children }: LayoutProps) {
             <a href="#" className="hover:text-slate-600 cursor-pointer">
               Home
             </a>
-            <a href="#" className="hover:text-slate-600 cursor-pointer">
+            <a href="mailto:aaronbesson@gmail.com" target="_blank" className="hover:text-slate-600 cursor-pointer">
               Contact
             </a>
           </nav>
         </div>
       </header>
-      <div className="container">
-        <main className="flex w-full flex-1 flex-col overflow-hidden">
+      <div className="w-full">
+        <main className="flex flex-1 flex-col overflow-hidden">
           {children}
         </main>
       </div>

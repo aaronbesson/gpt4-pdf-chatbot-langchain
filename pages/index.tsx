@@ -46,16 +46,12 @@ export default function Home() {
   //handle form submission
   async function handleSubmit(e: any) {
     e.preventDefault();
-
     setError(null);
-
     if (!query) {
       alert('Please input a question');
       return;
     }
-
     const question = query.trim();
-
     setMessageState((state) => ({
       ...state,
       messages: [
@@ -71,9 +67,7 @@ export default function Home() {
     setLoading(true);
     setQuery('');
     setMessageState((state) => ({ ...state, pending: '' }));
-
     const ctrl = new AbortController();
-
     try {
       fetchEventSource('/api/chat', {
         method: 'POST',
@@ -158,6 +152,8 @@ export default function Home() {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
   }, [chatMessages]);
+  
+
 
   return (
     <>
@@ -170,6 +166,8 @@ export default function Home() {
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
                 {chatMessages.map((message, index) => {
+                   var urlRegex = /(https?:\/\/[^\s]+)/g;
+                
                   let icon;
                   let className;
                   if (message.type === 'apiMessage') {
@@ -193,7 +191,7 @@ export default function Home() {
                         {icon}
                         <div className={styles.markdownanswer}>
                           <ReactMarkdown linkTarget="_blank">
-                            {message.message}
+                            {message.message.replace(urlRegex, '[$1]($1)')}
                           </ReactMarkdown>
                         </div>
                       </div>
@@ -208,14 +206,16 @@ export default function Home() {
                               <div key={`messageSourceDocs-${index}`}>
                                 <AccordionItem value={`item-${index}`}>
                                   <AccordionTrigger>
-                                    <h3>Source {index + 1}</h3>
+                                    <h3 className='text-sm text-gray-500'>Reference {index + 1}</h3>
                                   </AccordionTrigger>
                                   <AccordionContent>
-                                    <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent}
-                                    </ReactMarkdown>
-                                    <p className="mt-2">
-                                      <b>Source:</b> {doc.metadata.source}
+                                    <p className='text-gray-400 pr-3 py-3 text-xs text-justify'>
+      
+                                      {doc.pageContent.replace(/[\n\r\t\s]+/g, ' ')}
+
+                                    </p>
+                                    <p className="mt-2 text-xs text-blue-500">
+                                      <a href="https://www.finance.gov.tt/wp-content/uploads/2022/09/Budget-Statement-2023-E-Version.pdf"  target="_blank"><b>View source document</b></a>
                                     </p>
                                   </AccordionContent>
                                 </AccordionItem>
