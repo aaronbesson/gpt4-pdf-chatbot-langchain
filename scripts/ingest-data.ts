@@ -6,7 +6,7 @@ import { PDFLoader } from 'langchain/document_loaders';
 import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
 
 /* Name of directory to retrieve files from. You can change this as required */
-const filePath = 'docs/Budget-Statement-2023-E-Version.pdf';
+const filePath = 'docs/CPL2022Stats.pdf';
 
 export const run = async () => {
   try {
@@ -20,7 +20,7 @@ export const run = async () => {
     /* Split text into chunks */
     const textSplitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1000,
-      chunkOverlap: 200,
+      chunkOverlap: 20,
     });
 
     const docs = await textSplitter.splitDocuments(rawDocs);

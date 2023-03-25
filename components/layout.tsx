@@ -11,8 +11,9 @@ export default function Layout({ children }: LayoutProps) {
             <a href="#" className="hover:text-slate-600 cursor-pointer">
               Home
             </a>
-            <a href="#" className="hover:text-slate-600 cursor-pointer">
-              Contact
+            
+            <a href="mailto:aaronbesson@gmail.com" className="hover:text-slate-600 cursor-pointer">
+              Get in Touch
             </a>
           </nav>
         </div>

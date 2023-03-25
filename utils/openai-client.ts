@@ -5,5 +5,7 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 export const openai = new OpenAI({
-  temperature: 0,
+  temperature: 1,
+  maxRetries: 1,
+  maxTokens: 1000,
 });
