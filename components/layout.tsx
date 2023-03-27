@@ -8,9 +8,9 @@ export default function Layout({ children }: LayoutProps) {
       <header className=" sticky top-0 z-40 bg-white">
         <div className="h-16 border-b border-b-slate-200 py-4">
           <nav className="justify-between flex mx-12">
-            <a href="#" className="hover:text-slate-600 cursor-pointer">
-              Home
-            </a>
+          <h1 className="text-lg md:text-2xl  font-bold">
+            Trinidad and Tobago Budget 2023 Chatbot
+          </h1>
             <a href="mailto:aaronbesson@gmail.com" target="_blank" className="hover:text-slate-600 cursor-pointer">
               Contact
             </a>

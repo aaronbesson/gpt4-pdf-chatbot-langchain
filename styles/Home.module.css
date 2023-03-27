@@ -23,7 +23,7 @@
   resize: none;
   font-size: 1.1rem;
   padding: 1rem 2rem 1rem 2rem;
-  width: 75vw;
+  width: 74vw;
   border-radius: 0.5rem;
   border: 1px solid #d9d9e3;
   background: #ffffff;
@@ -48,7 +48,7 @@
 .generatebutton {
   position: absolute;
   top: 0.87rem;
-  right: 1rem;
+  right: 2rem;
   color: rgb(165, 162, 162);
   background: none;
   padding: 0.3rem;
@@ -233,11 +233,23 @@
   }
 
   .cloud {
-    width: 22rem;
+    width: 96%;
     height: 28rem;
   }
+
+  .generatebutton {
+    position: absolute;
+    top: 0.87rem;
+    right: 3rem;
+    color: rgb(165, 162, 162);
+    background: none;
+    padding: 0.3rem;
+    border: none;
+    display: flex;
+  }
+
   .textarea {
-    width: 22rem;
+    width: 92.5%;
   }
   .topnav {
     border: 1px solid black;
